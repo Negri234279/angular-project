@@ -1,0 +1,9 @@
+dist
+node_modules
+package-lock.json
+package.json
+README.md
+**/*.git*
+**/*.env
+.angular
+.vscode
