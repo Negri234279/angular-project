@@ -13,6 +13,7 @@ export class UsersListComponent implements OnInit {
     pageSize = 10
     totalPages!: number
     totalCount!: number
+    showActiveOnly: boolean = false
 
     constructor(private userService: UserService) {}
 
@@ -24,12 +25,13 @@ export class UsersListComponent implements OnInit {
         this.isLoading = true
 
         this.userService
-            .getUsersPage(page, this.pageSize)
+            .getUsersPage(page, this.pageSize, this.showActiveOnly)
             .subscribe(({ users, totalCount }) => {
                 this.users = users
                 this.totalPages = Math.ceil(totalCount / this.pageSize)
                 this.totalCount = totalCount
             })
+
         this.isLoading = false
     }
 

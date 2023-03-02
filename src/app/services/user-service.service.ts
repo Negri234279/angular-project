@@ -17,10 +17,15 @@ export class UserService {
         return this.http.get<User[]>(this.urlApi)
     }
 
-    getUsersPage(page: number, pageSize: number): Observable<UserPagination> {
+    getUsersPage(
+        page: number,
+        pageSize: number,
+        active?: boolean
+    ): Observable<UserPagination> {
         const params = {
             _page: page.toString(),
             _limit: pageSize.toString(),
+            ...(active && { active: 'true' }),
         }
 
         return this.http
