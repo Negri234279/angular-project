@@ -1,172 +1,186 @@
 {
-    "users": [
-        {
-            "id": "c3ce080a-88ee-4b1c-b88e-e7070b1365e6",
-            "nick": "bfarge0",
-            "fullname": "Bird Farge",
-            "active": false,
-            "role": "student"
-        },
-        {
-            "id": "1a751902-cad9-420b-bffa-a664b2616bf7",
-            "nick": "arizzi1",
-            "fullname": "Alikee Rizzi",
-            "active": true,
-            "role": "other"
-        },
-        {
-            "id": "d4150eee-37d8-4a18-8e9d-fd9837b65fbe",
-            "nick": "cbrigham2",
-            "fullname": "Carmella Brigham",
-            "active": true,
-            "role": "teacher"
-        },
-        {
-            "id": "dadaeca9-6ecd-4c2c-bbe8-4219cfdb97c2",
-            "nick": "switty3",
-            "fullname": "Sapphire Witty",
-            "active": true,
-            "role": "other"
-        },
-        {
-            "id": "43f4fc35-387e-4cbe-a5b6-86c12acd74cb",
-            "nick": "dtrounce4",
-            "fullname": "Doreen Trounce",
-            "active": true,
-            "role": "other"
-        },
-        {
-            "id": "50103224-4cb0-4c18-9ba7-69e588056cdf",
-            "nick": "dolliar5",
-            "fullname": "Donni Olliar",
-            "active": false,
-            "role": "other"
-        },
-        {
-            "id": "f7050dbb-14de-47bc-9655-868dfbf0d8b1",
-            "nick": "elucien6",
-            "fullname": "Emmey Lucien",
-            "active": false,
-            "role": "student"
-        },
-        {
-            "id": "04aa6dff-b74b-4abf-bcce-1668581cb3e0",
-            "nick": "arykert7",
-            "fullname": "Aksel Rykert",
-            "active": false,
-            "role": "teacher"
-        },
-        {
-            "id": "b085c21c-f97e-449e-a503-09a2353126d3",
-            "nick": "mbushnell8",
-            "fullname": "Margalo Bushnell",
-            "active": false,
-            "role": "teacher"
-        },
-        {
-            "id": "18bcd9d7-0c24-4b81-a7f3-5e77f9bff071",
-            "nick": "tdavern9",
-            "fullname": "Tedmund Davern",
-            "active": false,
-            "role": "student"
-        },
-        {
-            "id": "b4cd7936-9343-4274-a44e-a43d9cbab970",
-            "nick": "amassea",
-            "fullname": "Allie Masse",
-            "active": false,
-            "role": "teacher"
-        },
-        {
-            "id": "252e39d3-287e-4db8-b99a-8c8f393073d3",
-            "nick": "lroddenb",
-            "fullname": "Lesli Rodden",
-            "active": true,
-            "role": "student"
-        },
-        {
-            "id": "7c210ce8-d4dd-40c7-a3bf-06bbf02ecb40",
-            "nick": "nruselinc",
-            "fullname": "Nick Ruselin",
-            "active": false,
-            "role": "student"
-        },
-        {
-            "id": "a5c60910-21a6-48ca-b415-702f04bc0ac4",
-            "nick": "fpickoverd",
-            "fullname": "Felicdad Pickover",
-            "active": true,
-            "role": "teacher"
-        },
-        {
-            "id": "931edb3a-aba9-42e7-825e-fb3eba12fed0",
-            "nick": "eeckharde",
-            "fullname": "Estrella Eckhard",
-            "active": true,
-            "role": "other"
-        },
-        {
-            "id": "c8b4121a-376d-48fa-98ab-257eb4701df3",
-            "nick": "tbreddyf",
-            "fullname": "Tomkin Breddy",
-            "active": true,
-            "role": "other"
-        },
-        {
-            "id": "87d9c89c-ddb4-4edb-a258-48525fb89680",
-            "nick": "sstanniong",
-            "fullname": "Sheilakathryn Stannion",
-            "active": true,
-            "role": "other"
-        },
-        {
-            "id": "06b27892-5e86-48a8-9065-de389dd68583",
-            "nick": "preboulh",
-            "fullname": "Parry Reboul",
-            "active": true,
-            "role": "teacher"
-        },
-        {
-            "id": "05596c57-1fde-4bd7-b2e2-775d67970bfb",
-            "nick": "adoudnyi",
-            "fullname": "Ammamaria Doudny",
-            "active": false,
-            "role": "student"
-        },
-        {
-            "id": "861e7846-3714-4abb-af73-a8cb00e3be75",
-            "nick": "rcastroj",
-            "fullname": "Renee Castro",
-            "active": false,
-            "role": "student"
-        },
-        {
-            "id": "07992287-8291-495c-b12e-3050bce43dac",
-            "nick": "mindek",
-            "fullname": "Merrill Inde",
-            "active": true,
-            "role": "teacher"
-        },
-        {
-            "id": "1599bd78-4b38-422b-bfab-bd238629fb19",
-            "nick": "vmackeaguel",
-            "fullname": "Vassili MacKeague",
-            "active": false,
-            "role": "teacher"
-        },
-        {
-            "id": "87189c37-2c58-486d-864d-cda22c25cb77",
-            "nick": "cgentlem",
-            "fullname": "Carrie Gentle",
-            "active": false,
-            "role": "other"
-        },
-        {
-            "id": "8ebdb18e-f791-4e9c-b320-8e3b3d484018",
-            "nick": "mfinkern",
-            "fullname": "Mollie Finker",
-            "active": true,
-            "role": "student"
-        }
-    ]
+  "users": [
+    {
+      "id": "c3ce080a-88ee-4b1c-b88e-e7070b1365e6",
+      "nick": "bfarge0",
+      "fullname": "Bird Farge",
+      "active": false,
+      "role": "student"
+    },
+    {
+      "id": "1a751902-cad9-420b-bffa-a664b2616bf7",
+      "nick": "arizzi1",
+      "fullname": "Alikee Rizzi",
+      "active": true,
+      "role": "other"
+    },
+    {
+      "id": "d4150eee-37d8-4a18-8e9d-fd9837b65fbe",
+      "nick": "cbrigham2",
+      "fullname": "Carmella Brigham",
+      "active": true,
+      "role": "teacher"
+    },
+    {
+      "id": "dadaeca9-6ecd-4c2c-bbe8-4219cfdb97c2",
+      "nick": "switty3",
+      "fullname": "Sapphire Witty",
+      "active": true,
+      "role": "other"
+    },
+    {
+      "id": "43f4fc35-387e-4cbe-a5b6-86c12acd74cb",
+      "nick": "dtrounce4",
+      "fullname": "Doreen Trounce",
+      "active": true,
+      "role": "other"
+    },
+    {
+      "id": "50103224-4cb0-4c18-9ba7-69e588056cdf",
+      "nick": "dolliar5",
+      "fullname": "Donni Olliar",
+      "active": false,
+      "role": "other"
+    },
+    {
+      "id": "f7050dbb-14de-47bc-9655-868dfbf0d8b1",
+      "nick": "elucien6",
+      "fullname": "Emmey Lucien",
+      "active": false,
+      "role": "student"
+    },
+    {
+      "id": "04aa6dff-b74b-4abf-bcce-1668581cb3e0",
+      "nick": "arykert7",
+      "fullname": "Aksel Rykert",
+      "active": false,
+      "role": "teacher"
+    },
+    {
+      "id": "b085c21c-f97e-449e-a503-09a2353126d3",
+      "nick": "mbushnell8",
+      "fullname": "Margalo Bushnell",
+      "active": false,
+      "role": "teacher"
+    },
+    {
+      "id": "18bcd9d7-0c24-4b81-a7f3-5e77f9bff071",
+      "nick": "tdavern9",
+      "fullname": "Tedmund Davern",
+      "active": false,
+      "role": "student"
+    },
+    {
+      "id": "b4cd7936-9343-4274-a44e-a43d9cbab970",
+      "nick": "amassea",
+      "fullname": "Allie Masse",
+      "active": false,
+      "role": "teacher"
+    },
+    {
+      "id": "252e39d3-287e-4db8-b99a-8c8f393073d3",
+      "nick": "lroddenb",
+      "fullname": "Lesli Rodden",
+      "active": true,
+      "role": "student"
+    },
+    {
+      "id": "7c210ce8-d4dd-40c7-a3bf-06bbf02ecb40",
+      "nick": "nruselinc",
+      "fullname": "Nick Ruselin",
+      "active": false,
+      "role": "student"
+    },
+    {
+      "id": "a5c60910-21a6-48ca-b415-702f04bc0ac4",
+      "nick": "fpickoverd",
+      "fullname": "Felicdad Pickover",
+      "active": true,
+      "role": "teacher"
+    },
+    {
+      "id": "931edb3a-aba9-42e7-825e-fb3eba12fed0",
+      "nick": "eeckharde",
+      "fullname": "Estrella Eckhard",
+      "active": true,
+      "role": "other"
+    },
+    {
+      "id": "c8b4121a-376d-48fa-98ab-257eb4701df3",
+      "nick": "tbreddyf",
+      "fullname": "Tomkin Breddy",
+      "active": true,
+      "role": "other"
+    },
+    {
+      "id": "87d9c89c-ddb4-4edb-a258-48525fb89680",
+      "nick": "sstanniong",
+      "fullname": "Sheilakathryn Stannion",
+      "active": true,
+      "role": "other"
+    },
+    {
+      "id": "06b27892-5e86-48a8-9065-de389dd68583",
+      "nick": "preboulh",
+      "fullname": "Parry Reboul",
+      "active": true,
+      "role": "teacher"
+    },
+    {
+      "id": "05596c57-1fde-4bd7-b2e2-775d67970bfb",
+      "nick": "adoudnyi",
+      "fullname": "Ammamaria Doudny",
+      "active": false,
+      "role": "student"
+    },
+    {
+      "id": "861e7846-3714-4abb-af73-a8cb00e3be75",
+      "nick": "rcastroj",
+      "fullname": "Renee Castro",
+      "active": false,
+      "role": "student"
+    },
+    {
+      "id": "07992287-8291-495c-b12e-3050bce43dac",
+      "nick": "mindek",
+      "fullname": "Merrill Inde",
+      "active": true,
+      "role": "teacher"
+    },
+    {
+      "id": "1599bd78-4b38-422b-bfab-bd238629fb19",
+      "nick": "vmackeaguel",
+      "fullname": "Vassili MacKeague",
+      "active": false,
+      "role": "teacher"
+    },
+    {
+      "id": "87189c37-2c58-486d-864d-cda22c25cb77",
+      "nick": "cgentlem",
+      "fullname": "Carrie Gentle",
+      "active": false,
+      "role": "other"
+    },
+    {
+      "id": "8ebdb18e-f791-4e9c-b320-8e3b3d484018",
+      "nick": "mfinkern",
+      "fullname": "Mollie Finker",
+      "active": true,
+      "role": "student"
+    },
+    {
+      "id": "13f9ed70-a259-4f77-a5b2-0fd0d9ec6624",
+      "nick": "Usuario",
+      "fullname": "usuario usuario",
+      "active": true,
+      "role": "teacher"
+    },
+    {
+      "id": "c8745070-bf1f-42b4-8107-233378946d43",
+      "nick": "testsdf",
+      "fullname": "asdfasdf",
+      "active": true,
+      "role": "student"
+    }
+  ]
 }

@@ -1,41 +1,85 @@
-<h2>User List</h2>
+<div class="flex mb-4 justify-between max-w-6xl mx-auto">
+    <div></div>
+    <h1 class="text-center text-4xl font-extrabold">User List</h1>
+    <a
+        href="/create-user"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        >Create user</a
+    >
+</div>
+
 <div *ngIf="isLoading">Cargando...</div>
 <div *ngIf="!isLoading && users.length === 0">No se encontraron usuarios.</div>
 <div *ngIf="users.length !== 0">
-    <ul>
-        <li *ngFor="let user of users">
-            @{{ user.nick }} - {{ user.fullname }} -
-            {{ user.active ? 'Activo' : 'Inactivo' }} - {{ user.role }}
-        </li>
-    </ul>
-
-    <div class="flex flex-col items-center">
-        <!-- Help text -->
-        <span class="text-sm text-gray-700 dark:text-gray-400">
-            Showing
-            <span class="font-semibold text-gray-900 dark:text-white">{{ firstIndex   }}</span>
-            to
-            <span class="font-semibold text-gray-900 dark:text-white">{{ lastIndex  }}</span>
-            of
-            <span class="font-semibold text-gray-900 dark:text-white">{{ totalCount }}</span>
-            Entries
-        </span>
-        <!-- Buttons -->
-        <div class="inline-flex mt-2 xs:mt-0">
-            <button
-                [disabled]="currentPage === 1"
-                (click)="prevPage()"
-                class="px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-l hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+    <div
+        class="relative overflow-x-auto mx-auto shadow-md sm:rounded-lg max-w-6xl"
+    >
+        <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+        >
+            <thead
+                class="text-xs text-gray-700 uppercase bg-gray-50 even:dark:bg-gray-800 odd:dark:bg-gray-700 dark:text-gray-400"
             >
-                Prev
-            </button>
-            <button
-                [disabled]="currentPage === totalPages"
-                (click)="nextPage()"
-                class="px-4 py-2 text-sm font-medium text-white bg-gray-800 border-0 border-l border-gray-700 rounded-r hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-                Next
-            </button>
-        </div>
+                <tr>
+                    <th scope="col" class="px-6 py-3">Nick</th>
+                    <th scope="col" class="px-6 py-3">Name</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+                    <th scope="col" class="px-6 py-3">Role</th>
+                    <th scope="col" class="px-6 py-3">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let user of users; let impar = odd; let par = even"
+                    [ngClass]="{
+                        'dark:bg-gray-900': par,
+                        'dark:bg-gray-800': impar
+                    }"
+                    class="bg-white border-b dark:border-gray-700"
+                >
+                    <th
+                        scope="row"
+                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                        @{{ user.nick }}
+                    </th>
+                    <td class="px-6 py-4">
+                        {{ user.fullname }}
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                            <div
+                                [ngClass]="{
+                                    'bg-red-700': !user.active,
+                                    'bg-green-500': user.active
+                                }"
+                                class="h-2.5 w-2.5 rounded-full mr-2"
+                            ></div>
+                            {{ user.active ? 'Activo' : 'Inactivo' }}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ user.role }}
+                    </td>
+                    <td class="px-6 py-4">
+                        <a
+                            [routerLink]="['/update-user', user.id]"
+                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                            >Edit</a
+                        >
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+    <app-pagination
+        [firstIndex]="firstIndex"
+        [lastIndex]="lastIndex"
+        [totalCount]="totalCount"
+        [currentPage]="currentPage"
+        [totalPages]="totalPages"
+        (prevPage)="prevPage()"
+        (nextPage)="nextPage()"
+    />
 </div>

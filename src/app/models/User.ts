@@ -1,4 +1,4 @@
-enum UserRole {
+export enum UserRoles {
     Student = 'student',
     Teacher = 'teacher',
     Other = 'other',
@@ -10,7 +10,7 @@ export class User {
         public nick: string,
         public fullname: string,
         public active: boolean,
-        public role: string
+        public role: UserRoles | string
     ) {}
 }
 

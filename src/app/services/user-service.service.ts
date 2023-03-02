@@ -23,8 +23,6 @@ export class UserService {
             _limit: pageSize.toString(),
         }
 
-        
-
         return this.http
             .get<User[]>(this.urlApi, { params, observe: 'response' })
             .pipe(

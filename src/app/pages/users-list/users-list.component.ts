@@ -5,7 +5,6 @@ import { UserService } from 'src/app/services/user-service.service'
 @Component({
     selector: 'app-users-list',
     templateUrl: './users-list.component.html',
-    styleUrls: ['./users-list.component.css'],
 })
 export class UsersListComponent implements OnInit {
     users: User[] = []
@@ -35,15 +34,11 @@ export class UsersListComponent implements OnInit {
     }
 
     prevPage() {
-        console.log('prevPage')
-
         this.currentPage--
         this.loadPage(this.currentPage)
     }
 
     nextPage() {
-        console.log('nextPage')
-
         this.currentPage++
         this.loadPage(this.currentPage)
     }
