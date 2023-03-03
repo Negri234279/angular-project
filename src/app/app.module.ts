@@ -7,9 +7,11 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
 import { UsersListComponent } from './pages/users-list/users-list.component'
-import { PaginationComponent } from './components/pagination/pagination.component';
-import { CreateUserComponent } from './pages/create-user/create-user.component';
-import { UpdateUserComponent } from './pages/update-user/update-user.component'
+import { PaginationComponent } from './components/pagination/pagination.component'
+import { CreateUserComponent } from './pages/create-user/create-user.component'
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import { CapitalizeFirstLetterPipePipe } from './pipes/capitalize-first-letter-pipe.pipe';
+import { RoleNamePipePipe } from './pipes/role-name-pipe.pipe'
 
 @NgModule({
     declarations: [
@@ -19,6 +21,8 @@ import { UpdateUserComponent } from './pages/update-user/update-user.component'
         PaginationComponent,
         CreateUserComponent,
         UpdateUserComponent,
+        CapitalizeFirstLetterPipePipe,
+        RoleNamePipePipe,
     ],
     imports: [
         BrowserModule,

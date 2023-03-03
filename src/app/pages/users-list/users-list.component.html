@@ -60,7 +60,7 @@
                         @{{ user.nick }}
                     </th>
                     <td class="px-6 py-4">
-                        {{ user.fullname }}
+                        {{ user.fullname | capitalizeFirstLetterPipe }}
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex items-center">
@@ -75,7 +75,7 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        {{ user.role }}
+                        {{ user.role | roleNamePipe | capitalizeFirstLetterPipe }}
                     </td>
                     <td class="px-6 py-4 flex gap-4">
                         <a
