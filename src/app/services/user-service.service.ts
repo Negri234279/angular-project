@@ -20,11 +20,13 @@ export class UserService {
     getUsersPage(
         page: number,
         pageSize: number,
-        active?: boolean
+        sortBy: string,
+        active?: boolean,
     ): Observable<UserPagination> {
         const params = {
             _page: page.toString(),
             _limit: pageSize.toString(),
+            ...(sortBy && { _sort: sortBy }),
             ...(active && { active: 'true' }),
         }
 

@@ -1,0 +1,64 @@
+<div class="relative overflow-x-auto mx-auto shadow-md sm:rounded-lg max-w-6xl">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 even:dark:bg-gray-800 odd:dark:bg-gray-700 dark:text-gray-400"
+        >
+            <tr>
+                <th scope="col" class="px-6 py-3">Nick</th>
+                <th scope="col" class="px-6 py-3">Name</th>
+                <th scope="col" class="px-6 py-3">Status</th>
+                <th scope="col" class="px-6 py-3">Role</th>
+                <th scope="col" class="px-6 py-3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="let user of users; let impar = odd; let par = even"
+                [ngClass]="{
+                    'dark:bg-gray-900': par,
+                    'dark:bg-gray-800': impar
+                }"
+                class="bg-white border-b dark:border-gray-700"
+            >
+                <th
+                    scope="row"
+                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                    @{{ user.nick }}
+                </th>
+                <td class="px-6 py-4">
+                    {{ user.fullname | capitalizeFirstLetterPipe }}
+                </td>
+                <td class="px-6 py-4">
+                    <div class="flex items-center">
+                        <div
+                            [ngClass]="{
+                                'bg-red-700': !user.active,
+                                'bg-green-500': user.active
+                            }"
+                            class="h-2.5 w-2.5 rounded-full mr-2"
+                        ></div>
+                        {{ user.active ? 'Activo' : 'Inactivo' }}
+                    </div>
+                </td>
+                <td class="px-6 py-4">
+                    {{ user.role | roleNamePipe | capitalizeFirstLetterPipe }}
+                </td>
+                <td class="px-6 py-4 flex gap-4">
+                    <a
+                        [routerLink]="['/update-user', user.id]"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        >Edit</a
+                    >
+                    <button
+                        type="button"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        (click)="onDelete.emit(user.id)"
+                    >
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
