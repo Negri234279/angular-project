@@ -35,6 +35,12 @@ export class UsersListComponent implements OnInit {
         this.isLoading = false
     }
 
+    onDelete(id: string) {
+        this.userService.deleteUser(id).subscribe(() => {
+            this.loadPage(this.currentPage)
+        })
+    }
+
     prevPage() {
         this.currentPage--
         this.loadPage(this.currentPage)

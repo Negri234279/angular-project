@@ -77,12 +77,13 @@
                     <td class="px-6 py-4">
                         {{ user.role }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 flex gap-4">
                         <a
                             [routerLink]="['/update-user', user.id]"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                             >Edit</a
                         >
+                        <button type="button" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" (click)="onDelete(user.id)">Delete</button>
                     </td>
                 </tr>
             </tbody>
