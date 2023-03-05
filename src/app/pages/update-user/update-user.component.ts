@@ -4,6 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { Subscription } from 'rxjs'
 import { User, UserRoles } from 'src/app/models/User'
 import { UserService } from 'src/app/services/user-service.service'
+import {
+    activeValidation,
+    fullnameValidation,
+    nickValidation,
+    roleValidation,
+} from 'src/app/validations/user.validation'
 
 @Component({
     selector: 'app-update-user',
@@ -25,10 +31,10 @@ export class UpdateUserComponent implements OnInit, OnDestroy {
         private formBuilder: FormBuilder
     ) {
         this.form = this.formBuilder.group({
-            nick: new FormControl(['', Validators.required]),
-            fullname: new FormControl(['', Validators.required]),
-            active: new FormControl([false, Validators.required]),
-            role: new FormControl(['', Validators.required]),
+            nick: nickValidation,
+            fullname: fullnameValidation,
+            active: activeValidation,
+            role: roleValidation,
         })
     }
 

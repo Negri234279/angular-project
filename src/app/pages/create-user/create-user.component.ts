@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { User, UserRoles } from 'src/app/models/User'
 import { UserService } from 'src/app/services/user-service.service'
+import { fullnameValidation, nickValidation, roleValidation } from 'src/app/validations/user.validation'
 import { v4 as uuidv4 } from 'uuid'
 
 
@@ -43,15 +44,3 @@ export class CreateUserComponent {
         })
     }
 }
-
-export const nickValidation = new FormControl('', [
-    Validators.required,
-    Validators.pattern(/^[a-zá-úñ\s]{5,40}$/i),
-])
-export const fullnameValidation = new FormControl('', [
-    Validators.required,
-    Validators.pattern(/^[a-zá-úñ\s]{5,40}$/i),
-])
-export const roleValidation = new FormControl('', [
-    Validators.required,
-])
