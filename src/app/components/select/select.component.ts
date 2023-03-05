@@ -35,25 +35,3 @@ type Options = Array<{
     label: string
 }>
 
-/*export class SelectComponent implements OnInit {
-    public selectOptions: Options = []
-
-    @Input() label!: string
-    @Input() name!: string
-    @Input() formControlName!: string
-    @Input() options: object | Options = []
-    @Input() form!: FormGroup
-    @Input() requiredErrorMessage: string = 'Required field'
-
-    get id() {
-        return this.name
-    }
-
-    ngOnInit(): void {
-        if (typeof this.options === 'object') {
-            this.selectOptions = Object.values(this.options)
-        } else {
-            this.selectOptions = this.options
-        }
-    }
-}*/
