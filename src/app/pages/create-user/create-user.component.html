@@ -8,95 +8,15 @@
     (submit)="onSubmit($event)"
     class="max-w-lg mx-auto flex flex-col gap-8"
 >
-    <div>
-        <label
-            for="nick"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Nick</label
-        >
-        <input
-            type="text"
-            name="nick"
-            id="nick"
-            formControlName="nick"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        />
+    <app-input label="Nick" name="nick" [form]="newUser" />
+    <app-input label="Fullname" name="fullname" [form]="newUser" />
 
-        <p
-            class="mt-2 text-sm text-red-600 dark:text-red-500"
-            *ngIf="
-                newUser.controls['nick'].hasError('required') &&
-                newUser.controls['nick'].touched
-            "
-        >
-            Campo requerido
-        </p>
-        <p
-            class="mt-2 text-sm text-red-600 dark:text-red-500"
-            *ngIf="newUser.controls['nick'].hasError('pattern')"
-        >
-            Foramto incorrecto
-        </p>
-    </div>
-
-    <div>
-        <label
-            for="fullname"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Fullname</label
-        >
-        <input
-            type="text"
-            name="fullname"
-            id="fullname"
-            formControlName="fullname"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        />
-
-        <p
-            class="mt-2 text-sm text-red-600 dark:text-red-500"
-            *ngIf="
-                newUser.controls['fullname'].hasError('required') &&
-                newUser.controls['fullname'].touched
-            "
-        >
-            Campo requerido
-        </p>
-        <p
-            class="mt-2 text-sm text-red-600 dark:text-red-500"
-            *ngIf="newUser.controls['fullname'].hasError('pattern')"
-        >
-            Foramto incorrecto
-        </p>
-    </div>
-
-    <div>
-        <label
-            for="role"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Select an option</label
-        >
-        <select
-            id="role"
-            name="role"
-            formControlName="role"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        >
-            <option *ngFor="let userRole of userRoles" [value]="userRole">
-                {{ userRole | capitalizeFirstLetterPipe }}
-            </option>
-        </select>
-
-        <p
-            class="mt-2 text-sm text-red-600 dark:text-red-500"
-            *ngIf="
-                newUser.controls['role'].hasError('required') &&
-                newUser.controls['role'].touched
-            "
-        >
-            Campo requerido
-        </p>
-    </div>
+    <app-select
+        label="Select an option"
+        name="role"
+        [options]="userRoles"
+        [form]="newUser"
+    />
 
     <button
         type="submit"

@@ -12,19 +12,19 @@ import { v4 as uuidv4 } from 'uuid'
 })
 export class CreateUserComponent {
     newUser: FormGroup
-    userRoles = Object.values(UserRoles)
+    userRoles = UserRoles
 
     constructor(
         private frmBuilder: FormBuilder,
         private userService: UserService,
         private router: Router
     ) {
-		this.newUser = this.frmBuilder.group({
+        this.newUser = this.frmBuilder.group({
             nick: nickValidation,
             fullname: fullnameValidation,
             role: roleValidation,
         })
-	}
+    }
 
     onSubmit(event: Event) {
         event.preventDefault()
@@ -40,7 +40,6 @@ export class CreateUserComponent {
 
         this.userService.addUser(user).subscribe((user) => {
             this.router.navigate(['/'])
-			
         })
     }
 }
