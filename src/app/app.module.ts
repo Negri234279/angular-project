@@ -12,7 +12,9 @@ import { CreateUserComponent } from './pages/create-user/create-user.component'
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
 import { CapitalizeFirstLetterPipePipe } from './pipes/capitalize-first-letter-pipe.pipe';
 import { RoleNamePipePipe } from './pipes/role-name-pipe.pipe';
-import { UsersTableComponent } from './components/users-table/users-table.component'
+import { UsersTableComponent } from './components/users-table/users-table.component';
+import { InputComponent } from './components/input/input.component';
+import { SelectComponent } from './components/select/select.component'
 
 @NgModule({
     declarations: [
@@ -25,6 +27,8 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
         CapitalizeFirstLetterPipePipe,
         RoleNamePipePipe,
         UsersTableComponent,
+        InputComponent,
+        SelectComponent,
     ],
     imports: [
         BrowserModule,
