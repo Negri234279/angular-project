@@ -39,7 +39,7 @@ export class CreateUserComponent {
             this.newUser.value.role
         )
 
-        this.userService.addUser(user).subscribe((user) => {
+        this.userService.addUser(user).subscribe(() => {
             this.router.navigate(['/'])
         })
     }
