@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnDestroy } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router'
 import { User, UserRoles } from 'src/app/models/User'
@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid'
     selector: 'app-create-user',
     templateUrl: './create-user.component.html',
 })
-export class CreateUserComponent {
+export class CreateUserComponent implements OnDestroy {
     newUser: FormGroup
     userRoles = UserRoles
 
@@ -27,8 +27,8 @@ export class CreateUserComponent {
         })
     }
 
-    onSubmit(event: Event) {
-        event.preventDefault()
+    onSubmit(ev: Event) {
+        ev.preventDefault()
 
         const uuid = uuidv4()
         const user = new User(
@@ -42,5 +42,13 @@ export class CreateUserComponent {
         this.userService.addUser(user).subscribe(() => {
             this.router.navigate(['/'])
         })
+    }
+
+    cancel() {
+        this.router.navigate(['/'])
+    }
+
+    ngOnDestroy() {
+        this.newUser.reset()
     }
 }

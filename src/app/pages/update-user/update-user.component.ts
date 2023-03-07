@@ -47,6 +47,7 @@ export class UpdateUserComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.sub.unsubscribe()
+        this.form.reset()
     }
 
     getUser(id: string) {
