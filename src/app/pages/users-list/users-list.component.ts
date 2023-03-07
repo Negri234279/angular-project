@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Filters } from 'src/app/components/users-list-filters/users-list-filters.component'
 import { User } from 'src/app/models/User'
 import { UserService } from 'src/app/services/user-service.service'
 
@@ -34,6 +35,12 @@ export class UsersListComponent implements OnInit {
             })
 
         this.isLoading = false
+    }
+
+    updateFilters({ showActiveOnly, sortBy }: Filters): void {
+        this.showActiveOnly = showActiveOnly
+        this.sortBy = sortBy
+        this.loadPage(this.currentPage)
     }
 
     onDelete(id: string) {

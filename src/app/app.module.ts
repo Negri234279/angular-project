@@ -14,7 +14,8 @@ import { CapitalizeFirstLetterPipePipe } from './pipes/capitalize-first-letter-p
 import { RoleNamePipePipe } from './pipes/role-name-pipe.pipe';
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { InputComponent } from './components/input/input.component';
-import { SelectComponent } from './components/select/select.component'
+import { SelectComponent } from './components/select/select.component';
+import { UsersListFiltersComponent } from './components/users-list-filters/users-list-filters.component'
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { SelectComponent } from './components/select/select.component'
         UsersTableComponent,
         InputComponent,
         SelectComponent,
+        UsersListFiltersComponent,
     ],
     imports: [
         BrowserModule,
