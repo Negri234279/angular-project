@@ -39,7 +39,7 @@
             <option value="{{ SORT_OPTIONS.NICK }}">Sort by nick</option>
             <option value="{{ SORT_OPTIONS.FULLNAME }}">Sort by name</option>
             <option value="{{ SORT_OPTIONS.ROLE }}">Sort by role</option>
-            <option value="{{ SORT_OPTIONS.ACTIVE }}">Sort by active</option>
+            <option *ngIf="!showActiveOnly" value="{{ SORT_OPTIONS.ACTIVE }}">Sort by active</option>
         </select>
 
         <div class="flex items-center">

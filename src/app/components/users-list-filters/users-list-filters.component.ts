@@ -20,6 +20,10 @@ export class UsersListFiltersComponent {
     @Output() searchTextChanged = new EventEmitter<string>()
 
     onFiltersChanged(): void {
+        if (this.showActiveOnly && this.sortBy === SORT_OPTIONS.ACTIVE) {
+            this.sortBy = SORT_OPTIONS.NICK
+        }
+
         this.filtersChanged.emit({
             showActiveOnly: this.showActiveOnly,
             sortBy: this.sortBy,
