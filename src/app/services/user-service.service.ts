@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { User, UserPagination } from '../models/User'
+import { SORT_OPTIONS, User, UserPagination } from '../models/User'
 import { map } from 'rxjs/operators'
 
 @Injectable({
@@ -20,18 +20,26 @@ export class UserService {
     getUsersPage(
         page: number,
         pageSize: number,
-        sortBy: string,
-        active?: boolean,
+        sortBy: SORT_OPTIONS,
+        onlyActive?: boolean,
+        search?: string
     ): Observable<UserPagination> {
-        const params = {
+        const [sort, order] = SORT_MAPPER[sortBy]
+
+        const params: any = {
             _page: page.toString(),
             _limit: pageSize.toString(),
-            ...(sortBy && { _sort: sortBy }),
-            ...(active && { active: 'true' }),
+            ...(onlyActive && { active: 'true' }),
+            ...(sort && { _sort: sort }),
+            ...(order && { _order: order }),
+            ...(search && { nick_like: search }),
         }
 
         return this.http
-            .get<User[]>(this.urlApi, { params, observe: 'response' })
+            .get<User[]>(this.urlApi, {
+                params,
+                observe: 'response',
+            })
             .pipe(
                 map((res: HttpResponse<User[]>) => {
                     const totalCount = res.headers.get('X-Total-Count')
@@ -66,4 +74,11 @@ export class UserService {
         const url = `${this.urlApi}/${id}`
         return this.http.delete<User>(url)
     }
+}
+
+const SORT_MAPPER = {
+    [SORT_OPTIONS.NICK]: ['nick', 'asc'],
+    [SORT_OPTIONS.FULLNAME]: ['fullname', 'asc'],
+    [SORT_OPTIONS.ROLE]: ['role', 'desc'],
+    [SORT_OPTIONS.ACTIVE]: ['active', 'desc'],
 }

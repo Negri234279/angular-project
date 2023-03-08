@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core'
+import { SORT_OPTIONS } from 'src/app/models/User'
 
 export type Filters = {
     showActiveOnly: boolean
-    sortBy: string
+    sortBy: SORT_OPTIONS
 }
 
 @Component({
@@ -10,15 +11,22 @@ export type Filters = {
     templateUrl: './users-list-filters.component.html',
 })
 export class UsersListFiltersComponent {
-    showActiveOnly = false
-    sortBy = 'nick'
+    public showActiveOnly: boolean = false
+    public sortBy: SORT_OPTIONS = SORT_OPTIONS.NICK
+    public searchTerm: string = ''
+    public SORT_OPTIONS: typeof SORT_OPTIONS = SORT_OPTIONS
 
     @Output() filtersChanged = new EventEmitter<Filters>()
+    @Output() searchTextChanged = new EventEmitter<string>()
 
-    onFiltersChanged() {
+    onFiltersChanged(): void {
         this.filtersChanged.emit({
             showActiveOnly: this.showActiveOnly,
             sortBy: this.sortBy,
         })
+    }
+
+    onSearchTextChanged(): void {
+        this.searchTextChanged.emit(this.searchTerm)
     }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
+import { debounceTime, Subject } from 'rxjs'
 import { Filters } from 'src/app/components/users-list-filters/users-list-filters.component'
-import { User } from 'src/app/models/User'
+import { SORT_OPTIONS, User } from 'src/app/models/User'
 import { UserService } from 'src/app/services/user-service.service'
 
 @Component({
@@ -15,19 +16,34 @@ export class UsersListComponent implements OnInit {
     totalPages!: number
     totalCount!: number
     showActiveOnly: boolean = false
-    sortBy: string = 'nick'
+    sortBy: SORT_OPTIONS = SORT_OPTIONS.NICK
+    searchTerm = ''
+    searchTextChanged = new Subject<string>()
 
     constructor(private userService: UserService) {}
 
     ngOnInit() {
         this.loadPage(this.currentPage)
+
+        this.searchTextChanged
+            .pipe(debounceTime(300))
+            .subscribe((searchTerm: string) => {
+                this.searchTerm = searchTerm
+                this.loadPage(this.currentPage)
+            })
     }
 
     loadPage(page: number) {
         this.isLoading = true
 
         this.userService
-            .getUsersPage(page, this.pageSize, this.sortBy, this.showActiveOnly)
+            .getUsersPage(
+                page,
+                this.pageSize,
+                this.sortBy,
+                this.showActiveOnly,
+                this.searchTerm
+            )
             .subscribe(({ users, totalCount }) => {
                 this.users = users
                 this.totalPages = Math.ceil(totalCount / this.pageSize)
@@ -38,9 +54,14 @@ export class UsersListComponent implements OnInit {
     }
 
     updateFilters({ showActiveOnly, sortBy }: Filters): void {
+        this.currentPage = 1
         this.showActiveOnly = showActiveOnly
         this.sortBy = sortBy
         this.loadPage(this.currentPage)
+    }
+
+    onSearchTextChanged(searchTerm: string): void {
+        this.searchTextChanged.next(searchTerm)
     }
 
     onDelete(id: string) {

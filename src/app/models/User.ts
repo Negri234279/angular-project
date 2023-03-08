@@ -26,3 +26,10 @@ export interface UserPagination {
     users: User[]
     totalCount: number
 }
+
+export enum SORT_OPTIONS {
+    NICK = '1',
+    FULLNAME = '2',
+    ROLE = '3',
+    ACTIVE = '4',
+}

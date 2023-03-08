@@ -1,6 +1,9 @@
 <h1 class="text-center text-4xl font-extrabold mb-8">User List</h1>
 
-<app-users-list-filters (filtersChanged)="updateFilters($event)" />
+<app-users-list-filters
+    (filtersChanged)="updateFilters($event)"
+    (searchTextChanged)="onSearchTextChanged($event)"
+/>
 
 <div *ngIf="isLoading">Cargando...</div>
 
