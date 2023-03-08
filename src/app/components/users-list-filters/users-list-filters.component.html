@@ -1,31 +1,6 @@
 <div class="flex mb-6 justify-between max-w-6xl mx-auto">
     <div class="flex items-center gap-4">
         <div class="flex items-center">
-            <input
-                id="active"
-                type="checkbox"
-                [(ngModel)]="showActiveOnly"
-                (change)="onFiltersChanged()"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-            />
-            <label
-                for="active"
-                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Active user</label
-            >
-        </div>
-        <select
-            [(ngModel)]="sortBy"
-            (change)="onFiltersChanged()"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        >
-            <option value="{{ SORT_OPTIONS.NICK }}">Sort by nick</option>
-            <option value="{{ SORT_OPTIONS.FULLNAME }}">Sort by name</option>
-            <option value="{{ SORT_OPTIONS.ROLE }}">Sort by role</option>
-            <option value="{{ SORT_OPTIONS.ACTIVE }}">Sort by active</option>
-        </select>
-
-        <div class="flex items-center">
             <label for="simple-search" class="sr-only">Search</label>
             <div class="relative w-full">
                 <div
@@ -54,6 +29,32 @@
                     (input)="onSearchTextChanged()"
                 />
             </div>
+        </div>
+
+        <select
+            [(ngModel)]="sortBy"
+            (change)="onFiltersChanged()"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+            <option value="{{ SORT_OPTIONS.NICK }}">Sort by nick</option>
+            <option value="{{ SORT_OPTIONS.FULLNAME }}">Sort by name</option>
+            <option value="{{ SORT_OPTIONS.ROLE }}">Sort by role</option>
+            <option value="{{ SORT_OPTIONS.ACTIVE }}">Sort by active</option>
+        </select>
+
+        <div class="flex items-center">
+            <input
+                id="active"
+                type="checkbox"
+                [(ngModel)]="showActiveOnly"
+                (change)="onFiltersChanged()"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            />
+            <label
+                for="active"
+                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >Active user</label
+            >
         </div>
     </div>
     <a
